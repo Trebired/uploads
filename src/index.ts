@@ -1,8 +1,12 @@
 export { defineConfig, loadUploadsConfig } from "./config.js";
-export type { ImageUploadKindConfig, LoadUploadsConfigOptions, UploadsConfig } from "./config.js";
+export type {
+  ImageUploadKindConfig,
+  LoadUploadsConfigOptions,
+  UploadsConfig,
+} from "./config.js";
 export { bootstrapUploadsConfig, configureImageUploadKinds } from "./registry.js";
-export { setUploadsLogger } from "./logging.js";
-export type { UploadsLoggerInput } from "./logging.js";
+export type { BootstrapUploadsConfigOptions } from "./registry.js";
+export type { UploadsLoggerAdapter, UploadsLoggerInput } from "./logging.js";
 export {
   defaultImageExt,
   ensureImageKind,

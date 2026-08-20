@@ -4,6 +4,11 @@ All notable changes to `@trebired/uploads` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.1.1
+
+- Changed uploads initialization logging to call `@package/logger-adapter` directly from `bootstrapUploadsConfig`.
+- Removed the public `setUploadsLogger` API; package runtime logging is initialized through `bootstrapUploadsConfig({ logger, loggerAdapter })`.
+
 ## 0.1.0
 
 - Added `uploadImages`, `processImageFile`, `processImageFiles`, `processImageBuffer`, `makeRawUploader`: multer wiring and image encode/write, moved from platform's `core/uploads.ts`.

@@ -6,6 +6,7 @@
       "name": "@trebired/uploads",
       "dependencies": {
         "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.16",
+        "@trebired/env": "^0.1.0",
         "@trebired/i18n": "^0.5.5",
         "@trebired/result": "^1.2.6",
         "@trebired/utils": "^0.8.0",
@@ -84,6 +85,8 @@
     "@trebired/code-discipline": ["@trebired/code-discipline@7.0.2", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@package/result": "npm:@trebired/result@^1.1.6", "@trebired/utils": "^0.6.0", "typescript": "^6.0.3" }, "bin": { "code-discipline": "dist/cli.js" } }, "sha512-jftG3H58GvQyZugxx05/XPHFbix9LMlmd6Rj43jOlEmptOeys7bbYEg2tst/11MQvO7pO22dJvZzftjspN/CEg=="],
 
     "@trebired/configs": ["@trebired/configs@0.2.2", "", {}, "sha512-zjKhehxoASimCIcE4iJtUKnD3TZs2xg1CrXOd4jnwhdm1sOXT9hw8iVXBDY37nelA5lTp+F65Gm0jhbkVfA0hw=="],
+
+    "@trebired/env": ["@trebired/env@0.1.0", "", { "dependencies": { "@trebired/utils": "^0.8.0" } }, "sha512-mLStP5vWeSjfDr4zO2fjTpM1H10yo8Ff+uAgn+pGDj5vIsX6yaxVG1mg7VDVil2YKcB9nfvQu3z8SLHd0I9TlQ=="],
 
     "@trebired/i18n": ["@trebired/i18n@0.5.5", "", { "dependencies": { "@trebired/utils": "^0.6.0", "typescript": "^6.0.3" }, "bin": { "trebired-i18n": "dist/cli.js" } }, "sha512-LPptriSitVKr48TChcLnLQkicJfv/jfsQig78zcMRZDcEYOp6Cj3EL6gJ+xpvFEe9hM2Ni9wo5aPAAqQ3R6Dpg=="],
 

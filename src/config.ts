@@ -2,16 +2,27 @@ import { loadPackageConfig } from "@trebired/utils";
 
 const PACKAGE_NAME = "uploads";
 
+type ImageUploadUrlResolver = (entityId: unknown, fileName: string) => string;
+
+type ImageUploadKindConfigInput = {
+  dir: string;
+  layout: "entity" | "flat";
+  mountPath: string;
+  url?: ImageUploadUrlResolver;
+  urlPattern?: string;
+};
+
 type ImageUploadKindConfig = {
   dir: string;
   layout: "entity" | "flat";
   mountPath: string;
-  url: (entityId: unknown, fileName: string) => string;
+  url: ImageUploadUrlResolver;
 };
 
 type UploadsConfig = {
   forVersion: string;
-  imageKinds?: Record<string, ImageUploadKindConfig>;
+  baseDir?: string;
+  imageKinds?: Record<string, ImageUploadKindConfigInput>;
 };
 
 type LoadUploadsConfigOptions = {
@@ -30,4 +41,10 @@ async function loadUploadsConfig(
 }
 
 export { defineConfig, loadUploadsConfig };
-export type { ImageUploadKindConfig, LoadUploadsConfigOptions, UploadsConfig };
+export type {
+  ImageUploadKindConfig,
+  ImageUploadKindConfigInput,
+  ImageUploadUrlResolver,
+  LoadUploadsConfigOptions,
+  UploadsConfig,
+};

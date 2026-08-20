@@ -66,7 +66,6 @@ Call `await bootstrapUploadsConfig()` once at startup to load this file and regi
 - `makeRawUploader(options)`: a `multer` instance for non-image raw file uploads, with flat or path-preserving disk storage.
 - `ensureImageKind(kind)`, `isSafeFlatUploadFileName(fileName, kind)`, `resolveFlatUploadFileName(base, kind, opts?)`, `makeOutputFileName(base, opts?)`, `defaultImageExt(opts?)`: the kind-resolution and filename primitives the functions above are built from.
 - `flatUploadFileNameFromId`, `flatUploadGeneratedId`, `flatUploadIdFromValue`, `flatUploadUrlFromId`: helpers for flat-layout kinds keyed by a generated ID.
-- `setUploadsLogger(logger)`: point this package's internal logging at the app's own logger (`@trebired/logger-adapter`-compatible); defaults to a no-op.
 
 ## What It Does Not Do
 
