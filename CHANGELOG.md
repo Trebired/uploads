@@ -4,6 +4,10 @@ All notable changes to `@trebired/uploads` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.1.2
+
+- Updated the logger-adapter dependency so uploads initialization logs remain idempotent.
+
 ## 0.1.1
 
 - Changed uploads initialization logging to call `@package/logger-adapter` directly from `bootstrapUploadsConfig`.
