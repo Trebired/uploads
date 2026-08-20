@@ -1,0 +1,17 @@
+{
+  "#2ldjfoke531i": "./scripts/build/generated/tsconfig.mjs",
+  "#42j6dszdy5t3": "./src/config.ts",
+  "#55c2m2i0yvst": "./src/registry.ts",
+  "#651v92vvb07j": "./scripts/prepare-dist.mjs",
+  "#6cinjyhwhjyq": "./src/logging.ts",
+  "#7gen2e1nq5fo": "./src/image/helpers.ts",
+  "#7gv3u0hh4fgx": "./src/image/buffer.ts",
+  "#nct78ex4wnne": "./.trebired/logger/config.ts",
+  "#nrim5e0zaov6": "./scripts/verify-pack.mjs",
+  "#pew0i6wtoojb": "./src/image/processing.ts",
+  "#pkp5ullh47gr": "./src/image/i18n/en.ts",
+  "#q1b1qbkp7b96": "./src/image/i18n/cs.ts",
+  "#r6e0xjqdtnhm": "./src/uploads.ts",
+  "#upe9v8le5u40": "./src/index.ts",
+  "#yo5xk1li7rz0": "./src/image/flat.ts"
+}
