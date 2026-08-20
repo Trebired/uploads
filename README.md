@@ -1,8 +1,8 @@
 # @trebired/uploads
 
-Server-side upload processing for Trebired apps: multer wiring, image encode/resize via `sharp`, and disk storage, with image upload kinds configured through `.trebired/uploads/config.ts`.
+Server-side upload processing for Trebired apps: multer wiring, image encode/resize via `sharp`, disk storage, and static serving for configured image upload kinds.
 
-This package owns multer middleware construction, image buffer encoding (AVIF/GIF), and writing encoded images to disk under an app-configured set of "kinds" (each with its own directory, URL scheme, and layout). It does not own the client-side upload widget (`@trebired/frontend`'s `inputs/advanced/upload.tsx` owns that), route wiring, authentication, or entity persistence — the app supplies routes that call into this package.
+This package owns multer middleware construction, image buffer encoding (AVIF/GIF), writing encoded images to disk, and serving saved images from the configured `mountPath` for each kind. It does not own the client-side upload widget (`@trebired/frontend`'s `inputs/advanced/upload.tsx` owns that), mutating upload routes, authentication, or entity persistence — the app supplies routes that call into this package.
 
 ## Install
 
@@ -15,9 +15,9 @@ bun i @trebired/uploads
 ## Quick Start
 
 ```ts
-import { bootstrapUploadsConfig, processImageFile, uploadImages } from "@trebired/uploads";
+import { attachUploads, processImageFile, uploadImages } from "@trebired/uploads";
 
-await bootstrapUploadsConfig();
+await attachUploads(app);
 
 app.post("/avatar", uploadImages.single("file"), async (req, res) => {
   const result = await processImageFile(req.file, req.user.id, "avatar");
@@ -55,10 +55,11 @@ export default defineConfig({
 });
 ```
 
-Call `await bootstrapUploadsConfig()` once at startup to load this file and register its `imageKinds`. Apps that build kinds programmatically instead can call `configureImageUploadKinds(kinds)` directly — `ensureImageKind`, `processImageBuffer`, and every function built on them read from whichever was called last, and throw a clear `uploads-not-configured` error if neither ran yet.
+Call `await attachUploads(app)` once at startup to load this file, register its `imageKinds`, and mount static GET/HEAD handlers for each configured `mountPath`. Apps that do not need static serving can call `bootstrapUploadsConfig()` directly. Apps that build kinds programmatically instead can call `configureImageUploadKinds(kinds)` directly before `attachUploads(app)` — `ensureImageKind`, `processImageBuffer`, and every function built on them read from whichever was called last, and throw a clear `uploads-not-configured` error if neither ran yet.
 
 ## Public API
 
+- `attachUploads(app, options?)`, `attachUploadStaticRoutes(app, options?)`: load the upload config and mount static GET/HEAD handlers for configured image upload kind `mountPath` values.
 - `bootstrapUploadsConfig(options?)`, `configureImageUploadKinds(kinds)`: register the app's image upload kinds, from config or programmatically.
 - `defineConfig`, `loadUploadsConfig`: `.trebired/uploads/config.ts` support.
 - `uploadImages`: a ready-made `multer` instance restricted to image MIME types/extensions, 5 MB limit.
@@ -73,5 +74,5 @@ This package does not:
 
 - Ship a client-side upload UI. Use `@trebired/frontend`'s upload component alongside it.
 - Define any image upload kinds by default. The app configures every kind it uses.
-- Handle authentication, authorization, or route wiring.
+- Handle authentication, authorization, or mutating upload route wiring.
 - Persist upload metadata to a database.

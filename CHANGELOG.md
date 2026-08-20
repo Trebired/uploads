@@ -4,6 +4,11 @@ All notable changes to `@trebired/uploads` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.1.4
+
+- Added package-owned static serving for configured image upload kinds through `attachUploads`/`attachUploadStaticRoutes`.
+- Added generic GET/HEAD handling for configured `mountPath` values, with traversal-safe path resolution and image content types.
+
 ## 0.1.3
 
 - Updated env and result dependency ranges to the current package releases so consumers do not retain older nested logger-adapter installs.

@@ -145,9 +145,10 @@ async function writeConsumerManifest(consumerDir, tarballPath) {
 
 async function writeConsumerTypecheckFixture(consumerDir) {
   await fs.writeFile(path.join(consumerDir, "index.ts"), [
-      'import { configureImageUploadKinds, defineConfig, uploadImages } from "@package/uploads";',
+      'import { attachUploads, configureImageUploadKinds, defineConfig, uploadImages } from "@package/uploads";',
       "",
       "const config = defineConfig({ forVersion: \"0.1.0\" });",
+      "const app = { use(_mountPath: string, _handler: unknown) {} };",
       "configureImageUploadKinds({",
       "  generic: {",
       "    dir: \"/tmp/uploads-pack-smoke\",",
@@ -156,6 +157,7 @@ async function writeConsumerTypecheckFixture(consumerDir) {
       "    url: (entityId: unknown, fileName: string) => `/uploads/generic/${entityId}/${fileName}`,",
       "  },",
       "});",
+      "void attachUploads(app);",
       "void config;",
       "void uploadImages;",
     ].join("\n"));

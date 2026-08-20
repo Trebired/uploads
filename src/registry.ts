@@ -35,6 +35,10 @@ function requireConfiguredImageUploadKinds(): Record<string, ImageUploadKindConf
   return configuredImageKinds;
 }
 
+function readConfiguredImageUploadKinds(): Record<string, ImageUploadKindConfig>|null {
+  return configuredImageKinds;
+}
+
 async function bootstrapUploadsConfig(
   options: BootstrapUploadsConfigOptions = {},
 ): Promise<boolean> {
@@ -114,6 +118,7 @@ function createUploadUrlResolver(pattern: string) {
 export {
   bootstrapUploadsConfig,
   configureImageUploadKinds,
+  readConfiguredImageUploadKinds,
   requireConfiguredImageUploadKinds,
   resolveImageUploadKinds,
 };

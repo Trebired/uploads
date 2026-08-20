@@ -7,6 +7,11 @@ export type {
 export { bootstrapUploadsConfig, configureImageUploadKinds } from "./registry.js";
 export type { BootstrapUploadsConfigOptions } from "./registry.js";
 export type { UploadsLoggerAdapter, UploadsLoggerInput } from "./logging.js";
+export { attachUploads, attachUploadStaticRoutes } from "./static.js";
+export type {
+  UploadStaticAttachResult,
+  UploadStaticRouteOptions,
+} from "./static.js";
 export {
   defaultImageExt,
   ensureImageKind,
