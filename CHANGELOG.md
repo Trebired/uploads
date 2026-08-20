@@ -4,6 +4,10 @@ All notable changes to `@trebired/uploads` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.1.3
+
+- Updated env and result dependency ranges to the current package releases so consumers do not retain older nested logger-adapter installs.
+
 ## 0.1.2
 
 - Updated the logger-adapter dependency so uploads initialization logs remain idempotent.
