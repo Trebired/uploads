@@ -8,7 +8,7 @@
     }
   },
   "name": "@trebired/uploads",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Server-side upload processing for Trebired apps: multer wiring, image encode/resize, and disk storage, configured through .trebired/uploads/config.ts.",
   "type": "module",
   "private": false,
