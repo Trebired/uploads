@@ -8,7 +8,7 @@
     }
   },
   "name": "@trebired/uploads",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Server-side upload processing for Trebired apps: multer wiring, image encode/resize, and disk storage, configured through .trebired/uploads/config.ts.",
   "type": "module",
   "private": false,
@@ -42,7 +42,7 @@
     "verify:pack": "bun ./scripts/verify-pack.mjs"
   },
   "dependencies": {
-    "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.19",
+    "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.6.0",
     "@trebired/env": "^0.1.2",
     "@trebired/i18n": "^0.5.6",
     "@trebired/result": "^1.2.8",
