@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "category": "package",
+  "subcategory": "data",
+  "status": "active",
+  "npm": "@trebired/uploads",
+  "description": {
+    "en": "Server-side upload handling: wiring, image processing and disk storage.",
+    "cs": "Zpracování nahrávaných souborů na serveru: napojení, úpravy obrázků a ukládání na disk."
+  }
+}
